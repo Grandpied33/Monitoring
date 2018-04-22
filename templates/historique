@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block titre %}
+    Acceuil
+{% endblock %}
+
+{% block body %}
+{% for entrie in entries %}
+<h1>Historique d'activité pour  {{ entrie.0 }}</h1>
+
+{% endfor %}
+{% endblock %}

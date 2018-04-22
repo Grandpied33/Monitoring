@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block titre %}
+    Acceuil
+{% endblock %}
+
+{% block body %}
+    {% if session['logged_in'] %}
+    <p>You're logged in already!</p>
+    {% else %}
+    <form action="/login/" method="POST">
+    <input type="username" name="username" placeholder="Username" value="{{
+        request.form.username }}">
+    <input type="password" name="password" placeholder="Password" value="{{
+        request.form.password }}">
+    <input type="submit" value="Login">
+    </form>
+    {% endif %}
+
+{% endblock %}
